@@ -5,7 +5,10 @@ body {
   font-weight: 400; /* 기본 폰트 두께 지정 */
   line-height: 1.4; /* 기본 행간 높이 지정 */
   font-family: "Nanum Gothic", sans-serif;
-
+  
+}
+a {
+  text-decoration: none;
 }
 img {
   display: block; /* 인라인 요소(글자취급)를 화면구성 레이아웃(상자취급)으로 활용함을 지정. */
@@ -14,13 +17,13 @@ img {
 
 /* HEADER */
 header {
-  background-color: royalblue;
+  background-color: #f6f5f0;
+  border-bottom: 1px solid #c8c8c8;
 }
 header .inner {   /* inner는 통상적으로 건너뛰는 것이 좋다. 그럼 inner의 역할은?? */
   width: 1100px;
   height: 120px;
   margin: 0 auto; /* 위아래 사용X, 좌우 브라우저 자동 계산 */
-  background-color: orange;
   position: relative;
 }
 header .logo {
@@ -31,4 +34,79 @@ header .logo {
   left: 0; /* (마지막으로) inner부모요소를 기준으로 좌측에 붙어 있다는 것을 정확하게 명시 한다. */
   margin: auto; /* ② auto 0의 생략 버전, 즉 위,아래 값만 움직이도록 하는 것. =수직 중앙 정렬 설정 */
   
+}
+
+/* SUB MENU */
+header .sub-menu { /* ))그래서 마마한테 와서 수직 > 수평 정렬로 바꾼다. */ 
+  position: absolute; /* 구조적인 부모는 inner 이다. */
+  top: 10px;
+  right: 0;
+  display: flex;
+}
+header .sub-menu ul.menu {
+  font-family: Arial, sans-serif;
+  display: flex; /* 수직 > 수평 정렬 */
+}
+header .sub-menu ul.menu li {
+  position: relative;
+}
+header .sub-menu ul.menu li::before {  /* ::는 가상요소 선택자, 인라인 요소이다. */
+  content: "";
+  /* -- display: block; 값은 삭제한다. */
+  width: 1px;
+  height: 12px;
+  background-color: #e5e5e5;
+  position: absolute; /* -- position: absolute;는 block요소로 자동 전환되는 특성이 있어 */
+  top: 0;
+  bottom: 0;
+  margin: auto;
+}
+header .sub-menu ul.menu li:first-child::before {
+  display: none;
+}
+
+header .sub-menu ul.menu li a {
+  font-size: 12px;
+  padding: 11px 16px;
+  display: block;
+  color:#656565;
+
+}
+header .sub-menu ul.menu li a:hover {
+  color: #000;
+}
+
+/* SEARCH */
+header .sub-menu .search {
+  height: 34px; /* 검색창 영역 높이 값 */
+  position: relative;
+}
+header .sub-menu .search input { /* ))search요소는 div, block요소임으로 가로너비가 최대한 늘어나려고 하는 특징있어서 돋보기가 혼자 둘째줄 끝으로 이동하는 이슈 발생된다. */
+  width: 36px;
+  height: 34px;
+  padding: 4px 10px;
+  border: 1px solid #ccc;
+  box-sizing: border-box;
+  border-radius: 5px;
+  outline: none; /* input요소 선택 시 생기는 파란색 테두리 없애기. */
+  background-color: #fff;
+  color: #777;
+  font-size: 12px;
+  transition: width .4s; /* input 창이 축소될 떄 자연스럽게 함. */
+}
+header .sub-menu .search input:focus { /* 클릭하면 작동하도록 함. */
+  width: 190px;
+  border-color: #669900;
+}
+header .sub-menu .search .material-icons { /* 돋보기 search 영역 수직 가운데 정렬 배치하기 */
+  height: 24px;
+  position: absolute; /* 부모 요소 기준으로 배치하기 */
+  top: 0;
+  bottom: 0;
+  right: 5px; /* 부모요소 기준으로 우측으로 5픽셀 지점 위치 */
+  margin: auto;
+  transition: .4s;
+}
+header .sub-menu .search.focused .material-icons {
+  opacity: 0; //.search.focused class가 실행되면 
 }
