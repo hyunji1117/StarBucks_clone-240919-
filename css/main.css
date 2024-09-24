@@ -13,6 +13,11 @@ a {
 img {
   display: block; /* 인라인 요소(글자취급)를 화면구성 레이아웃(상자취급)으로 활용함을 지정. */
 }
+.inner {
+  width: 1100px;
+  margin: 0 auto; /* 위아래 사용X, 좌우 브라우저 자동 계산 */
+  position: relative;
+}
 
 
 /* HEADER */
@@ -20,11 +25,10 @@ header {
   background-color: #f6f5f0;
   border-bottom: 1px solid #c8c8c8;
 }
-header .inner {   /* inner는 통상적으로 건너뛰는 것이 좋다. 그럼 inner의 역할은?? */
-  width: 1100px;
-  height: 120px;
-  margin: 0 auto; /* 위아래 사용X, 좌우 브라우저 자동 계산 */
-  position: relative;
+/* header 바로 아래 자식요소만 해댱하도록 지정하여 아래 contents__menu의 inner와 명확한 구분을 해준다. */
+header > .inner {   /* inner는 통상적으로 건너뛰는 것이 좋다. 그럼 inner의 역할은?? */ 
+  height: 120px; /* header의 높이를 말함. */
+  
 }
 header .logo {
   height: 75px; /* ③ 정확한 로고의 높이값 명시) */
@@ -108,5 +112,78 @@ header .sub-menu .search .material-icons { /* 돋보기 search 영역 수직 가
   transition: .4s;
 }
 header .sub-menu .search.focused .material-icons {
-  opacity: 0; //.search.focused class가 실행되면 
+  opacity: 0; /* .search.focused class가 실행되면 */
+}
+
+header .main-menu {
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  z-index: 1; /* drop down된 main manu가 맨위에 보여야 하기 떄문 */
+  display: flex;
+}
+header .main-menu .item {
+
+}
+header .main-menu .item .item__name {
+  padding: 10px 20px 34px 20px;
+  font-family: Arial, sans-serif;
+  font-size: 13px;
+}
+header .main-menu .item:hover .item__name { /* item에 hover를 부여해야지만 main menu frop down 했을 때 이름과 컨텐츠 모두 적용이 된다. */
+  background-color: #2c2a29;
+  color: #669900;
+  border-radius: 6px 6px 0 0;
+}
+header .main-menu .item .item__contents { 
+  width: 100%;
+  position: fixed;
+  left: 0;
+  display: none;
+}
+header .main-menu .item:hover .item__contents {
+  display: block;
+}
+header .main-menu .item .item__contents .contents__menu {
+  background-color: #2c2a29;
+}
+header .main-menu .item .item__contents .contents__menu > ul { /* 바로 자식 ul만 해당 */ /* 커피, 에스프레소 음료 부분이 수평으로 정렬하기 */
+  display: flex;
+  padding: 20px 0;
+
+}
+header .main-menu .item .item__contents .contents__menu > ul > li {
+  width: 220px;
+
+}
+header .main-menu .item .item__contents .contents__menu > ul > li h4 {
+  padding: 3px 0 12px 0;
+  font: 14px;
+  color: #fff;
+}
+/* header .main-menu .item .item__contents .contents__menu > ul > li ul {} /* 쓰지 않고 지저분해 보이니 삭제할 것 */
+
+header .main-menu .item .item__contents .contents__menu > ul > li ul li{
+  padding: 5px 0;
+  font: 12px;
+  color: #999;
+  cursor: pointer;
+}
+header .main-menu .item .item__contents .contents__menu > ul > li ul li:hover {
+  color: #669900;
+}
+header .main-menu .item .item__contents .contents__texture {
+  padding: 26px 0;
+  font-size: 12px; /* 폰트 사이즈는 상속이 되기 때문에 부모요소에 부여해도 된다. */
+  background-image: url("/images/main_menu_pattern.jpg"); /* 이 코드는 기본적을 반복해서 나오기에 background repeat를 별도로 하지 않아도 된다. */
+}
+header .main-menu .item .item__contents .contents__texture h4 {
+  color: #999;
+  font-weight: 700;
+  
+}
+header .main-menu .item .item__contents .contents__texture p {
+  color: #669900;
+  margin: 4px 0 14px;
+
 }
