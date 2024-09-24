@@ -5,7 +5,7 @@ body {
   font-weight: 400; /* 기본 폰트 두께 지정 */
   line-height: 1.4; /* 기본 행간 높이 지정 */
   font-family: "Nanum Gothic", sans-serif;
-  
+  height: 3000px;
 }
 a {
   text-decoration: none;
@@ -22,8 +22,12 @@ img {
 
 /* HEADER */
 header {
+  width: 100%;
+  /* position: relative; */
   background-color: #f6f5f0;
   border-bottom: 1px solid #c8c8c8;
+  position: fixed; /* 뷰포트 기준으로 배치 - 가로 위치를 최소한으로 사용하는 특성이 있다. width를 auto > 100%로 변경하면 이슈 해결! */
+  top: 0; 
 }
 /* header 바로 아래 자식요소만 해댱하도록 지정하여 아래 contents__menu의 inner와 명확한 구분을 해준다. */
 header > .inner {   /* inner는 통상적으로 건너뛰는 것이 좋다. 그럼 inner의 역할은?? */ 
@@ -186,4 +190,18 @@ header .main-menu .item .item__contents .contents__texture p {
   color: #669900;
   margin: 4px 0 14px;
 
+}
+
+/* BADGE */
+header .badges {
+  position: absolute;
+  top: 132px;
+  right: 12px;
+}
+header .badges .badge {
+  border-radius: 10px;
+  overflow: hidden; /* 이미지가 틀 밖으로 넘치지 않도록 잘라준다. */
+  margin-bottom: 12px;
+  box-shadow: 4px 4px 10px rgba(0, 0, 0, .15); /* 마지막은 투명 값 = 0.15 */
+  cursor: pointer;
 }

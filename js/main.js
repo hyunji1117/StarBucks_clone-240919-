@@ -1,3 +1,4 @@
+//SEARCH
 const searchEl = document.querySelector('.search'); //class가 search인 요소를 찾아서 searchEl 변수에 할당하기
 const searchInputEl = searchEl.querySelector('input'); //앞서 찾아둔 searchEl변수에서 input을 찾기
 
@@ -14,3 +15,34 @@ searchInputEl.addEventListener('blur', function () { //blur: focus가 해제 되
   searchEl.classList.remove('focused'); //searchInputEl에 focus가 해제되면 새로 추가한 class focused를 삭제한다.  
   searchInputEl.setAttribute('placeholder', ' ');
 });
+
+//BADGE
+const badgeEl = document.querySelector('.badges');
+
+//window = 브라우져 창
+/*
+window.addEventListener('scroll', function () {
+  console.log('scroll!'); 스크롤할 때 많은 scroll함수가 실행된다. > 导致화면 버벅임
+});
+*/
+
+window.addEventListener('scroll', _.throttle(function () {
+  console.log(window.scrollY); //화면을 스크롤할 때 화면의 위치가 숫자로 표시된다.
+  if(window.scrollY > 500) { //scroll Y값(세로값)을 통해 화면이 위에서부터 몇 픽셀 지점에 위치하고 있는지를 파악 가능함.
+    //만약 픽셀 지점이 500보다 커지면 벳지를 숨겨준다. (css로 처리)
+    // badgeEl.style.display = 'none' (기능적으로는 가능)
+    //gsap.to(요소, 지속시간, 옵션);
+    gsap.to(badgeEl, .6, { //객체 데이터 추가로 0.6초 동안 opacity(투명도)가 점점 연해지는 기능. 시각적 뿐만 아니라 기능적으로도 사라지게 만들어야 함.
+      opacity: 0,
+      display: 'none'
+    });
+  } else {
+    //500보다 작으면 벳지를 다시 보여준다.
+    // badgeEl.style.display = 'block' (기능적으로는 가능)
+    gsap.to(badgeEl, .6, {
+      opacity: 1,
+      display: 'block' //block = 해제
+    });
+  }
+}, 300)); //0.3초 단위로 부하를 줘서 함수가 우르르 실행되는 것을 방지하는 용도로 로데시에서 제공하는 throttle 기능을 도입한다.
+//scroll 이벤트 통해 작업할 때 많이 사용된다. (연결되어 있는 익명함수가 많은 횟수로 실행되기 때문.)
