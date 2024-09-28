@@ -28,6 +28,7 @@ header {
   border-bottom: 1px solid #c8c8c8;
   position: fixed; /* 뷰포트 기준으로 배치 - 가로 위치를 최소한으로 사용하는 특성이 있다. width를 auto > 100%로 변경하면 이슈 해결! */
   top: 0; 
+  z-index: 9;
 }
 /* header 바로 아래 자식요소만 해댱하도록 지정하여 아래 contents__menu의 inner와 명확한 구분을 해준다. */
 header > .inner {   /* inner는 통상적으로 건너뛰는 것이 좋다. 그럼 inner의 역할은?? */ 
@@ -204,4 +205,48 @@ header .badges .badge {
   margin-bottom: 12px;
   box-shadow: 4px 4px 10px rgba(0, 0, 0, .15); /* 마지막은 투명 값 = 0.15 */
   cursor: pointer;
+}
+
+/* VISUAL */
+.visual {
+  margin-top: 120px; /* header의 높이 값 */
+  background-image: url(../images/visual_bg.jpg);
+  background-position: center; /* 정가운데 하나만 놓겠다 */
+}
+.visual .inner {
+  height: 636px; /* body에 기설정된 inner 값이 있어서 모든 inner는 해당 영향을 받게 된다. 즉, 이미지 위치 변경으로 position: relative 안 넣어도 된다. */
+}
+.visual .title {
+  position: absolute;
+  top: 88px;
+  left: -10px;
+}
+.visual .title {
+
+}
+
+.visual .cup1.image {
+  position: absolute;
+  bottom: 0;
+  right: -47px;
+}
+.visual .cup1.text {
+  position: absolute;
+  top: 38px;
+  right: 171px;
+}
+.visual .cup2.image {
+  position: absolute;
+  bottom: 0;
+  right: 162px;
+}
+.visual .cup2.text {
+  position: absolute;
+  top: 321px;
+  right: 416px;
+}
+.visual .spoon {
+  position: absolute;
+  bottom: 0;
+  left: 275px;
 }
