@@ -18,6 +18,55 @@ img {
   margin: 0 auto; /* 위아래 사용X, 좌우 브라우저 자동 계산 */
   position: relative;
 }
+.btn {
+  width: 130px;
+  padding: 10px;
+  border: 2px solid #333;
+  border-radius: 4px;
+  color: #333;
+  font-size: 16px;
+  font-weight: 700;
+  text-align: center;
+  cursor: pointer;
+  box-sizing: border-box ; /* a태그, span태그에 btn class 부여했을 때 적용이 되도록 사전 설정 */
+  transition: .4s;
+}
+.btn:hover {
+  background-color: #333;
+  color: #fff;
+}
+.btn.btn--reverse { /* 반전된 버튼 */
+  background-color: #333;
+  color: #fff;
+}
+.btn.btn--reverse:hover {
+  background-color: transparent;
+  color: #333;
+}
+.btn.btn--brown { /* 갈색 버튼 */
+  color: #592b18;
+  border-color: #592b18;
+}
+.btn.btn--brown:hover {
+  color: #fff;
+  background-color: #592b18;
+}
+.btn.btn--gold { /* 금색 버튼 */
+  color: #d9aa8a;
+  border-color: #d9aa8a;
+}
+.btn.btn--gold:hover {
+  color: #fff;
+  background-color: #d9aa8a;
+}
+.btn.btn--white { /* 흰색 버튼 */
+  color: #fff;
+  border-color: #fff;
+}
+.btn.btn--white:hover {
+  color: #333;
+  background-color: #fff;
+}
 
 
 /* HEADER */
@@ -221,8 +270,10 @@ header .badges .badge {
   top: 88px;
   left: -10px;
 }
-.visual .title {
-
+.visual .title .btn { /* 구조상 부모요소 = title */
+  position: absolute;
+  top: 259px;
+  left: 173px;
 }
 
 .visual .cup1.image {
