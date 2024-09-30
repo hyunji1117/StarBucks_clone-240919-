@@ -46,3 +46,14 @@ window.addEventListener('scroll', _.throttle(function () {
   }
 }, 300)); //0.3초 단위로 부하를 줘서 함수가 우르르 실행되는 것을 방지하는 용도로 로데시에서 제공하는 throttle 기능을 도입한다.
 //scroll 이벤트 통해 작업할 때 많이 사용된다. (연결되어 있는 익명함수가 많은 횟수로 실행되기 때문.)
+
+
+//FADE-IN
+const fadeEls = document.querySelectorAll('.visual .fade-in');
+fadeEls.forEach(function (fadeEl, index) { //html에서 찾은 fade-in의 개수만큼 함수 실행 (통상적으로 단수형태로 작성함, 반복 횟수)...1.4, 2.1, 2.8
+  //gsap.to(요소, 지속시간, 옵션);
+  gsap.to(fadeEl, 1, {
+    delay: (index * 1) * .7, //첫번쨰 inde값 * 0.7 = 0 (지연시간X), 두번째 index값 * 0.7 = 0.7
+    opacity: 1 //css에서 작성한 opacity: 0이 1이 되도록 하는 것.
+  }); 
+}); 
