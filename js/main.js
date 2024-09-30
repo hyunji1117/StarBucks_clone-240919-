@@ -57,3 +57,6 @@ fadeEls.forEach(function (fadeEl, index) { //html에서 찾은 fade-in의 개수
     opacity: 1 //css에서 작성한 opacity: 0이 1이 되도록 하는 것.
   }); 
 }); 
+
+
+//NOTICE
