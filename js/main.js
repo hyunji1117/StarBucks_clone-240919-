@@ -60,3 +60,12 @@ fadeEls.forEach(function (fadeEl, index) { //html에서 찾은 fade-in의 개수
 
 
 //NOTICE
+
+
+//SWIPER.JS
+new Swiper('.notice-line .swiper-container', {  //new Swiper(인수(선택자), 옵션)
+  direction: 'vertical',
+  autoplay:  true, //자동재생
+  loop: true, //반복해줌
+
+});  
