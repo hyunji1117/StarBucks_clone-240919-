@@ -176,9 +176,6 @@ header .main-menu {
   z-index: 1; /* drop down된 main manu가 맨위에 보여야 하기 떄문 */
   display: flex;
 }
-header .main-menu .item {
-
-}
 header .main-menu .item .item__name {
   padding: 10px 20px 34px 20px;
   font-family: Arial, sans-serif;
@@ -306,27 +303,24 @@ header .badges .badge {
 }
 
 /* NOTICE */
-.notice {
-
-}
 .notice .notice-line { /* 높이 값이 최대한 줄어들려고 하지만 inner값 때문에 늘려나는 상황 */
   position: relative;
 }
 .notice .notice-line .bg-left {
-  position: absolute;
-  top: 0;
-  left: 0;
   width: 50%;
   height: 100%; /* 100%로 채우려고 하도록 설정 */
   background-color: #333;
-}
-.notice .notice-line .bg-right {
   position: absolute;
   top: 0;
-  right: 0;
+  left: 0;  
+}
+.notice .notice-line .bg-right {
   width: 50%;
   height: 100%; /* 100%로 채우려고 하도록 설정 */
   background-color: #f6f5ef;
+  position: absolute;
+  top: 0;
+  right: 0;
 }
 .notice .notice-line .inner { /* 결국 inner의 height 값으로 모두의 높이를 컨트롤 가능. 超方便! */
   height: 62px;
@@ -349,7 +343,8 @@ header .badges .badge {
 } 
 .notice .notice-line .inner__left .swiper-container {
   height: 62px; /* 추가 해야 해당 영역이 다시 보인다. */
-  flex-grow: 1; /* 최대한 늘어나라 */
+  /*flex-grow: 1;  최대한 늘어나라 */
+  overflow: hidden;
 }
 .notice .notice-line .inner__left .swiper-slide {
   height: 62px;
@@ -391,5 +386,24 @@ header .badges .badge {
   align-items: center;
 }
 .notice .notice-line .inner__right .toggle-promotion .material-icons {
-  font-style: 30px;
+  font-size: 30px;
+}
+
+/* PROMOTION */
+.notice .promotion {
+  height: 693px;
+  background-color: #f6f5ef;
+  position: relative;
+  
+}
+.notice .promotion .swiper-container {
+  width: calc(819px * 3 + 20px); /* 단위계산 칼크함수 */
+  height: 553px;
+  background-color: orange;
+  /* text-align: center;
+  font-size: 200px; ??*/
+  position: absolute; /* 중앙 이미지 확대해도 중앙에 위치하도록 */
+  top: 40px;
+  left: 50%; /* .promotion배경과swiper-container배경이 정확히 절반씩 뷰포트에 보여짐. */
+  margin-left: calc((819px * 3 + 20px) / -2); /* .swiper-container총 가로길이의 절반만 왼쪽으로 당겨오기 */ 
 }

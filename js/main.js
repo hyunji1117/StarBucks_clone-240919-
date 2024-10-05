@@ -17,7 +17,7 @@ searchInputEl.addEventListener('blur', function () { //blur: focus가 해제 되
 });
 
 //BADGE
-const badgeEl = document.querySelector('.badges');
+const badgeEl = document.querySelector('header .badges')
 
 //window = 브라우져 창
 /*
@@ -59,13 +59,16 @@ fadeEls.forEach(function (fadeEl, index) { //html에서 찾은 fade-in의 개수
 }); 
 
 
-//NOTICE
-
-
-//SWIPER.JS
+//NOTICE (SWIPER.JS)
 new Swiper('.notice-line .swiper-container', {  //new Swiper(인수(선택자), 옵션)
   direction: 'vertical',
-  autoplay:  true, //자동재생
-  loop: true, //반복해줌
+  autoplay: true, //자동재생
+  loop: true //반복해줌
+});
 
-});  
+new Swiper('.promotion .swiper-container', {
+  // direction: horizontal; 기본값으로 작성하지 않아도 됨. 
+  slidesPerView: 3, //한번에 세개 슬라이드를 보여줌. 
+  spaceBetween: 10, //슬라이드 사이 여백
+  centeredSlides: true //1번 슬라이드를 가운데 보이게 하기.
+});
