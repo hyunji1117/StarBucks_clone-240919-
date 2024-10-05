@@ -343,7 +343,7 @@ header .badges .badge {
 } 
 .notice .notice-line .inner__left .swiper-container {
   height: 62px; /* 추가 해야 해당 영역이 다시 보인다. */
-  /*flex-grow: 1;  최대한 늘어나라 */
+  /*flex-grow: 1;  최대한 늘어나라. 현재로써 오류 발생되어 hidden으로 대체함. */
   overflow: hidden;
 }
 .notice .notice-line .inner__left .swiper-slide {
