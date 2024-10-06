@@ -70,5 +70,17 @@ new Swiper('.promotion .swiper-container', {
   // direction: horizontal; 기본값으로 작성하지 않아도 됨. 
   slidesPerView: 3, //한번에 세개 슬라이드를 보여줌. 
   spaceBetween: 10, //슬라이드 사이 여백
-  centeredSlides: true //1번 슬라이드를 가운데 보이게 하기.
-});
+  centeredSlides: true, //1번 슬라이드를 가운데 보이게 하기.
+  loop: true,
+  // autoplay: {
+  //   delay: 5000 //5초 마다 슬라이드 전환
+  // }
+  pagination: {
+    el: '.promotion .swiper-pagination', //선택자에 맞는 요소를 찾아 페이지 번호 사용하도록 동작한다. 
+    clickable: true //페이지 버튼을 실제로 눌러서 사용 가능여부
+  },
+  navigation: {
+    prevEl: '.promotion .swiper-prev', //이전 슬라이드를 볼 수 있는 기능
+    nextEl: '.promotion .swiper-next' //이후 슬라이드를 볼 수 있는 기능
+  }
+}); 
