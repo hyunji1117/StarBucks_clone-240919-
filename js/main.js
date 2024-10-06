@@ -84,3 +84,18 @@ new Swiper('.promotion .swiper-container', {
     nextEl: '.promotion .swiper-next' //이후 슬라이드를 볼 수 있는 기능
   }
 }); 
+
+//TOGGLE-PROMOTION
+const promotionEl = document.querySelector('.promotion');
+const promotionToggleBtn = document.querySelector('.toggle-promotion');
+let isHidePromotion = false; //promotion 영역이 숨겨져 있는지 확인. 화면에 잘 보이니 false로 지정
+promotionToggleBtn.addEventListener('click', function () {
+  isHidePromotion = !isHidePromotion //변수 값을 지속적으로 반대값으로 전환시켜주는 코드
+  if (isHidePromotion) { //isHidePromotion 값 확인하기
+    //숨김 처리
+    promotionEl.classList.add('hide'); // 해당 상황이 되면 'hide' class 추가가 된다. 
+  } else {
+    //보임 처리
+    promotionEl.classList.remove('hide');
+  }
+}); 
