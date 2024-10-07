@@ -28,12 +28,16 @@ jQuery 등의 라이브러리는 사용하지 않았습니다.
 - 다중요소 슬라이드
 - 전역 버튼 스타일 기능  
 공통 스타일 정의 후 class 지정으로 해당 스타일 적용된 버튼 사용.
+- parallax 기능
+스클롤 시 배경은 뷰포트에 고정.
 
 ### JAVASCRIPT
 - swiper 활용한 수직 슬라이드
 - 3D 애니메이션
 - 요소 슬라이드 swiper.js 활용
 - iframe API 활용
+- easing 함수
+- gsap.to 함수
 
 
 # 프로젝트 진행 단계
