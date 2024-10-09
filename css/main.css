@@ -597,9 +597,9 @@ header .badges .badge {
 .season-product .text-group .description {
   margin-bottom: 15px;
 }
-.season-product .text-group .more {
+/* .season-product .text-group .more {
 
-}
+} */
 
 /* RESERVE COFFEE */
 .reserve-coffee {
@@ -647,4 +647,16 @@ header .badges .badge {
 }
 .pick-your-favorite .text-group .description {
   margin-bottom: 40px;
+}
+
+/* RESERVE STORE */
+.reserve-store {
+  background-image: url("../images/reserve_bg.jpg");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-attachment: fixed;
+  background-size: cover;
+}
+.reserve-store .inner{
+  height: 600px;
 }
