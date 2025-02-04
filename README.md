@@ -1,4 +1,5 @@
-# 다중 애니메이션과 슬라이드 기반 UI 구현
+# 다중 애니메이션과 슬라이드 기반 UI 구현  
+[스타벅스 홈페이지](https://hyunji1117.github.io/StarBucks_clone-240919-.github.io/)
 
 ##### 참여자: 김현지 (개인 프로젝트)  
   
